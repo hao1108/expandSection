@@ -89,7 +89,11 @@ class SingleAnalysisViewController: UIViewController,UITableViewDelegate,UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell") as! SingleAnalaysisViewCell
-        
+        if (sections[indexPath.section].expanded) {
+            cell.MyView.isHidden = false
+        } else {
+            cell.MyView.isHidden = true
+        }
 //       
 //        cell.textLabel?.text = sections[indexPath.section].movies[indexPath.row]
 //        cell.backgroundColor = UIColor.yellow
